@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-2Q7eKGFPzTjG17PZiUPp3qOF1i/pwC8zkyGnLjK3q3a6TxskgxavbYUZRjRZQMBj+fjq5w5QMDjoWAtIyEjK7w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <title>Dashboard de Chamados</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Dashboard de Chamados</h1>
+        <div class="card-container">
+        </div>
+        <button class="new-card-button" id="new-card-button"><i class="fas fa-plus"></i> Novo Chamado</button>
+    </div>
+
+    <!-- Modal para Novo Card -->
+    <div class="modal" id="new-modal">
+        <div class="modal-content">
+            <span class="close-button" id="new-close-button">&times;</span>
+            <h2>Novo Chamado</h2>
+            <form id="new-form">
+                <label for="title">Título:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="description">Descrição:</label>
+                <textarea id="description" name="description" required></textarea>
+                <label for="priority">Prioridade:</label>
+                <select id="priority" name="priority">
+                    <option value="baixa">Baixa</option>
+                    <option value="media">Média</option>
+                    <option value="alta">Alta</option>
+                </select>
+                <button type="submit" class="submit-button">Criar Chamado</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para Editar Card -->
+    <div class="modal" id="edit-modal">
+        <div class="modal-content">
+            <span class="close-button" id="edit-close-button">&times;</span>
+            <h2>Editar Chamado</h2>
+            <form id="edit-form">
+                <input type="hidden" id="edit-id" name="id">
+                <label for="edit-title">Título:</label>
+                <input type="text" id="edit-title" name="title" required>
+                <label for="edit-description">Descrição:</label>
+                <textarea id="edit-description" name="description" required></textarea>
+                <label for="edit-priority">Prioridade:</label>
+                <select id="edit-priority" name="priority">
+                    <option value="baixa">Baixa</option>
+                    <option value="media">Média</option>
+                    <option value="alta">Alta</option>
+                </select>
+                <button type="submit" class="submit-button">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/index.js"></script>
+
+</body>
+
+</html>
